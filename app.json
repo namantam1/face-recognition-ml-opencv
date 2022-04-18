@@ -5,7 +5,7 @@
     "keywords": ["Flask", "Machine learning", "Open CV"],
     "env": {
         "PROJECT_PATH": {
-            "description": "This is path to server folder",
+            "description": "Deploys server folder only. Don't change it",
             "value": "server"
         }
     },
