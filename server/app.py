@@ -16,5 +16,4 @@ def home():
     return render_template("app.html")
 
 if __name__ == "__main__":
-    util.load_saved_artifacts()
     app.run(port=5000, debug=True)

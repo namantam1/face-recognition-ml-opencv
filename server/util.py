@@ -4,10 +4,12 @@ import numpy as np
 import cv2
 from wavelet import w2d
 
-__class_name_to_number = {}
-__class_number_to_name = {}
+with open("./artifacts/class_dictionary.json", "r") as f:
+    __class_name_to_number = json.load(f)
+    __class_number_to_name = {v:k for k,v in __class_name_to_number.items()}
 
-__model = None
+with open('./artifacts/saved_model.pkl', 'rb') as f:
+    __model = joblib.load(f)
 
 def classify_image(image):
     imgs = get_cropped_image_if_2_eyes(image)
@@ -32,22 +34,6 @@ def classify_image(image):
 
 def class_number_to_name(class_num):
     return __class_number_to_name[class_num]
-
-def load_saved_artifacts():
-    print("loading saved artifacts...start")
-    global __class_name_to_number
-    global __class_number_to_name
-
-    with open("./artifacts/class_dictionary.json", "r") as f:
-        __class_name_to_number = json.load(f)
-        __class_number_to_name = {v:k for k,v in __class_name_to_number.items()}
-
-    global __model
-    if __model is None:
-        with open('./artifacts/saved_model.pkl', 'rb') as f:
-            __model = joblib.load(f)
-    print("loading saved artifacts...done")
-
 
 def get_cv2_image_from_file(file):
     npimg = np.fromfile(file)
