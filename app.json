@@ -1,0 +1,29 @@
+{
+    "name": "Image recognition app",
+    "description": "A simple image recognition ML model",
+    "repository": "https://github.com/namantam1/face-regonition-ml-opencv",
+    "keywords": ["Flask", "Machine learning", "Open CV"],
+    "env": {
+        "PROJECT_PATH": {
+            "description": "This is path to server folder",
+            "value": "server"
+        }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1,
+            " size": "Free"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "https://github.com/timanovsky/subdir-heroku-buildpack"
+        },
+        {
+            "url": "heroku-community/apt"
+        },
+        {
+            "url": "heroku/python"
+        }
+    ]
+}

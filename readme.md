@@ -27,8 +27,8 @@ Technologies used in this project,
 
 1. Clone repository
    ```bash
-   git clone 
-   cd 
+   git clone https://github.com/namantam1/face-regonition-ml-opencv
+   cd face-regonition-ml-opencv
    ```
 
 > **NOTE :** You can create a virtualenv before running this command. Please don't forget to activate it if do.
@@ -44,4 +44,8 @@ Technologies used in this project,
    cd server
    python app.py
    ```
+
+# Deployment
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/namantam1/face-regonition-ml-opencv)
 
